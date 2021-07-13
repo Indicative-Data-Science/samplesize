@@ -1,3 +1,6 @@
 main*.py
 .vscode
 experiment
+data/*
+*__pycache__
+!data/*exact_samples.csv
