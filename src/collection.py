@@ -3,7 +3,6 @@ import gnssmapper as gm
 import geopandas as gpd
 import pandas as pd
 import numpy as np
-from pygeos.io import ShapelyGeometry
 import shapely.ops
 import shapely.geometry
 
@@ -27,7 +26,7 @@ def create_obs(map_,bounds,start, end,samples,*args):
     az=np.mod(az,360)
     d_ray = ((a-x)**2 +(b-y)**2)**0.5
     d_building = np.array([p.distance(map_.geometry[0]) for p in obs_points])
-    return pd.DataFrame({'x':x,'y':y,'w':w,'z':z,'a':a,'b':b,'d_ray':d_ray,'d_building':d_building,'az':az,'el':gm.observations.elevation(obs.geometry)})
+    return pd.DataFrame({'x':x,'y':y,'w':w,'z':z,'a':a,'b':b,'d_ray':d_ray,'d_building':d_building,'az':az,'el':gm.observations.elevation(obs.geometry),'time':obs.time})
     
 def create_image(x,y,i,resolution,bounds,mean=True):
     minx,miny,maxx,maxy=bounds
