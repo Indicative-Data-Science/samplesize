@@ -44,9 +44,9 @@ def generate_samples(data, height):
         out_idx = np.flatnonzero(out_obs)
         max_size = np.sum(in_obs)+np.sum(out_obs)
         sample_size = [
-            2**i for i in range(1, np.ceil(np.log2(max_size), 0.25).astype('int'))]
+            2**i for i in np.linspace(1, np.log2(np.minimum(max_size*0.95,1e6)), 100)]
         insample_proportion = np.arange(0.1, 1.1, 0.1)
-        reps = range(30)
+        reps = range(10)
         insample_size = (np.floor(p*s).astype('int')
                          for s in sample_size for p in insample_proportion)
         outsample_size = (np.ceil((1-p)*s).astype('int')
