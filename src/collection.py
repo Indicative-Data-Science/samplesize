@@ -54,7 +54,7 @@ if __name__=="__main__":
     samples=int(sys.argv[1])
     writepath=sys.argv[2]
     map_= gpd.GeoDataFrame({'height':[10],'geometry':[shapely.wkt.loads("POLYGON((528005 183005, 528005 182995,527995 182995, 527995 183005,528005 183005))")]},crs=7405)
-    box = shapely.geometry.box(527935, 182935, 528065,183065)
+    box = shapely.geometry.box(527950, 182950, 528050,183050)
     start = pd.Timestamp('2021-01-01 00:00:00')
     end = pd.Timestamp('2021-01-01 23:59:59')
     obs= create_obs(map_,box.bounds,start,end,samples)
