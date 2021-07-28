@@ -4,3 +4,7 @@ experiment
 data/*
 *__pycache__
 !data/*exact_samples.csv
+maps/
+figures/
+src/run.sh
+src/walks.py
