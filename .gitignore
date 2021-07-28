@@ -4,6 +4,7 @@ experiment
 data/*
 *__pycache__
 !data/*exact_samples.csv
+!data/maps.zip
 maps/
 figures/
 src/run.sh
